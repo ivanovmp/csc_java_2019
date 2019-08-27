@@ -8,7 +8,7 @@ import org.junit.runners.MethodSorters;
 import static org.junit.Assert.*;
 
 @FixMethodOrder(MethodSorters.JVM)
-public class _1_Assertions {
+public class _1_AssertionsTest {
 
     @Test
     public void assertBooleanTrue() {

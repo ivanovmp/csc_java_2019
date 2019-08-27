@@ -8,7 +8,7 @@ import static org.junit.Assert.assertEquals;
 import static ru.compscicenter.java_2019.Util.__;
 
 @FixMethodOrder(MethodSorters.JVM)
-public class _2_ArithmeticOperators {
+public class _2_ArithmeticOperatorsTest {
 
     @Test
     public void simpleOperations() {
