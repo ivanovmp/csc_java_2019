@@ -1,6 +1,8 @@
 package ru.compscicenter.java_2019.lesson_02;
 
+import org.junit.FixMethodOrder;
 import org.junit.Test;
+import org.junit.runners.MethodSorters;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -8,6 +10,7 @@ import java.util.List;
 import static org.junit.Assert.assertEquals;
 import static ru.compscicenter.java_2019.Util.__;
 
+@FixMethodOrder(MethodSorters.JVM)
 public class _7_AutoboxingTest {
 
     @Test
