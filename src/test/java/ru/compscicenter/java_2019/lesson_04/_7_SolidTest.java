@@ -85,6 +85,7 @@ public class _7_SolidTest {
         List<String> anotherList = new ArrayList<>();
         BetterCollectionWrapper<String> wrapper = new BetterCollectionWrapper<>();
         wrapper.addObserver(anotherList::add);
+        wrapper.addObserver(System.out::println);
         wrapper.add("hey!");
         assertEquals(wrapper.size(), __);
         assertEquals(anotherList.size(), __);
@@ -93,24 +94,24 @@ public class _7_SolidTest {
     @Test
     public void liskovSubstitutionBadSmellAndSolution() {
 
-        class Shape {
+        class Rectangle {
 
             String draw() {
-                return "||||||";
+                return "∆";
             }
 
         }
 
-        class TransparentShape extends Shape {
+        class TransparentRectangle extends Rectangle {
 
             @Override
             String draw() {
-                throw new UnsupportedOperationException("transparent shape shouldn't be drawn!"); //here contract is broken
+                throw new UnsupportedOperationException("transparent rectangle shouldn't be drawn!"); //here contract is broken
             }
         }
 
-        Shape shape = new TransparentShape();
-        assertEquals(shape.draw(), __);
+        List<Rectangle> list = List.of(new Rectangle(), new TransparentRectangle());
+        list.forEach(Rectangle::draw);
 
     }
 
