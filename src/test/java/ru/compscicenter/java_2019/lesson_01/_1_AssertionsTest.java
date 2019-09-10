@@ -77,9 +77,9 @@ public class _1_AssertionsTest {
 
     @Test
     public void assertNotSameInstance() {
-        Integer original = Integer.valueOf(1);
+        Integer original = new Integer(1);
         Integer same = original;
-        Integer different = Integer.valueOf(1);
+        Integer different = new Integer(1);
         // These are both equal to the original...
         assertEquals(original, same);
         assertEquals(original, different);
