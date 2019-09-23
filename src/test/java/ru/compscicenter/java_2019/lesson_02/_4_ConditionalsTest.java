@@ -16,7 +16,7 @@ public class _4_ConditionalsTest {
         if (true) {
             x++;
         }
-        assertEquals(x, __);
+        assertEquals(__, x);
     }
 
     @Test
@@ -28,7 +28,7 @@ public class _4_ConditionalsTest {
         } else {
             x--;
         }
-        assertEquals(x, __);
+        assertEquals(__, x);
     }
 
     @Test
@@ -43,7 +43,7 @@ public class _4_ConditionalsTest {
         } else {
             x--;
         }
-        assertEquals(x, __);
+        assertEquals(__, x);
     }
 
     @Test
@@ -58,8 +58,8 @@ public class _4_ConditionalsTest {
             x = 10;
         else
             x--;
-        // ...but they are recommended.
-        assertEquals(x, __);
+        // ...but they are !!VERY!! recommended.
+        assertEquals(__, x);
     }
 
     @Test
@@ -77,7 +77,7 @@ public class _4_ConditionalsTest {
         } else {
             x--;
         }
-        assertEquals(x, __);
+        assertEquals(__, x);
     }
 
     @Test
@@ -94,7 +94,7 @@ public class _4_ConditionalsTest {
             default:
                 result += "Nothing";
         }
-        assertEquals(result, __);
+        assertEquals(__, result);
     }
 
     @Test
@@ -109,7 +109,7 @@ public class _4_ConditionalsTest {
             default:
                 result += "Nothing";
         }
-        assertEquals(result, __);
+        assertEquals(__, result);
     }
 
     @Test
@@ -124,7 +124,7 @@ public class _4_ConditionalsTest {
             case 2:
                 result += "Two";
         }
-        assertEquals(result, __);
+        assertEquals(__, result);
     }
 
     @Test
@@ -141,7 +141,7 @@ public class _4_ConditionalsTest {
             default:
                 result += "Nothing";
         }
-        assertEquals(result, __);
+        assertEquals(__, result);
     }
 
     @Test
@@ -158,7 +158,7 @@ public class _4_ConditionalsTest {
             default:
                 result += "Nothing";
         }
-        assertEquals(result, __);
+        assertEquals(__, result);
     }
 
     @Test
@@ -169,9 +169,9 @@ public class _4_ConditionalsTest {
         if (trueCount.count() || falseCount.count()) {
             x = "kthxbai";
         }
-        assertEquals(x, __);
-        assertEquals(trueCount.count, __);
-        assertEquals(falseCount.count, __);
+        assertEquals(__, x);
+        assertEquals(__, trueCount.count);
+        assertEquals(__, falseCount.count);
     }
 
     @Test
@@ -183,8 +183,8 @@ public class _4_ConditionalsTest {
             x = "kthxbai";
         }
         assertEquals(x, __);
-        assertEquals(trueCount.count, __);
-        assertEquals(falseCount.count, __);
+        assertEquals(__, trueCount.count);
+        assertEquals(__, falseCount.count);
     }
 
     @Test
@@ -203,8 +203,8 @@ public class _4_ConditionalsTest {
                     notDangerous = animal;
             }
         }
-        assertEquals(notDangerous, __);
-        assertEquals(dangerous, __);
+        assertEquals(__, notDangerous);
+        assertEquals(__, dangerous);
     }
 
     class Counter {

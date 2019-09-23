@@ -12,187 +12,186 @@ public class _1_PrimitivesTest {
 
     @Test
     public void wholeNumbersAreOfTypeInt() {
-        assertEquals(getType(1), __); // hint: int.class
+        assertEquals(__, getType(1)); // hint: int.class
     }
 
     @Test
     public void primitivesOfTypeIntHaveAnObjectTypeInteger() {
         Object number = 1;
-        assertEquals(getType(number), __);
+        assertEquals(__, getType(number));
 
         // Primitives can be automatically changed into their object type via a process called auto-boxing
-        // We will explore this in more detail in intermediate.AboutAutoboxing
     }
 
     @Test
     public void integersHaveAFairlyLargeRange() {
-        assertEquals(Integer.MIN_VALUE, __);
-        assertEquals(Integer.MAX_VALUE, __);
+        assertEquals(__, Integer.MIN_VALUE); // how to convert 0x to 10 and vice versa
+        assertEquals(__, Integer.MAX_VALUE);
     }
 
     @Test
     public void integerSize() {
-        assertEquals(Integer.SIZE, __);  // This is the amount of bits used to store an int
+        assertEquals(__, Integer.SIZE);  // This is the amount of bits used to store an int
     }
 
     @Test
     public void wholeNumbersCanAlsoBeOfTypeLong() {
-        assertEquals(getType(1L), __);
+        assertEquals(__, getType(1L));
     }
 
     @Test
     public void primitivesOfTypeLongHaveAnObjectTypeLong() {
         Object number = 1L;
-        assertEquals(getType(number), __);
+        assertEquals(__, getType(number));
     }
 
     @Test
     public void longsHaveALargerRangeThanInts() {
-        assertEquals(Long.MIN_VALUE, __);
-        assertEquals(Long.MAX_VALUE, __);
+        assertEquals(__, Long.MIN_VALUE);
+        assertEquals(__, Long.MAX_VALUE);
     }
 
     @Test
     public void longSize() {
-        assertEquals(Long.SIZE, __);
+        assertEquals(__, Long.SIZE);
     }
 
     @Test
     public void wholeNumbersCanAlsoBeOfTypeShort() {
-        assertEquals(getType((short) 1), __); // The '(short)' is called an explicit cast - to type 'short'
+        assertEquals(__, getType((short) 1)); // The '(short)' is called an explicit cast - to type 'short'
     }
 
     @Test
     public void primitivesOfTypeShortHaveAnObjectTypeShort() {
         Object number = (short) 1;
-        assertEquals(getType(number), __);
+        assertEquals(__, getType(number));
     }
 
     @Test
     public void shortsHaveASmallerRangeThanInts() {
-        assertEquals(Short.MIN_VALUE, __);  // hint: You'll need an explicit cast
-        assertEquals(Short.MAX_VALUE, __);
+        assertEquals(__, Short.MIN_VALUE);  // hint: You'll need an explicit cast
+        assertEquals(__, Short.MAX_VALUE);
     }
 
     @Test
     public void shortSize() {
-        assertEquals(Short.SIZE, __);
+        assertEquals(__, Short.SIZE);
     }
 
     @Test
     public void wholeNumbersCanAlsoBeOfTypeByte() {
-        assertEquals(getType((byte) 1), __);
+        assertEquals(__, getType((byte) 1));
     }
 
     @Test
     public void primitivesOfTypeByteHaveAnObjectTypeByte() {
         Object number = (byte) 1;
-        assertEquals(getType(number), __);
+        assertEquals(__, getType(number));
     }
 
     @Test
     public void bytesHaveASmallerRangeThanShorts() {
-        assertEquals(Byte.MIN_VALUE, __);
-        assertEquals(Byte.MAX_VALUE, __);
+        assertEquals(__, Byte.MIN_VALUE);
+        assertEquals(__, Byte.MAX_VALUE);
 
         // Why would you use short or byte considering that you need to do explicit casts?
     }
 
     @Test
     public void byteSize() {
-        assertEquals(Byte.SIZE, __);
+        assertEquals(__, Byte.SIZE);
     }
 
     @Test
     public void wholeNumbersCanAlsoBeOfTypeChar() {
-        assertEquals(getType((char) 1), __);
+        assertEquals(__, getType((char) 1));
     }
 
     @Test
     public void singleCharactersAreOfTypeChar() {
-        assertEquals(getType('a'), __);
+        assertEquals(__, getType('a'));
     }
 
     @Test
     public void primitivesOfTypeCharHaveAnObjectTypeCharacter() {
         Object number = (char) 1;
-        assertEquals(getType(number), __);
+        assertEquals(__, getType(number));
     }
 
     @Test
     public void charsCanOnlyBePositive() {
-        assertEquals((int) Character.MIN_VALUE, __);
-        assertEquals((int) Character.MAX_VALUE, __);
+        assertEquals(__, (int) Character.MIN_VALUE);
+        assertEquals(__, (int) Character.MAX_VALUE);
 
         // Why did we cast MIN_VALUE and MAX_VALUE to int? Try it without the cast.
     }
 
     @Test
     public void charSize() {
-        assertEquals(Character.SIZE, __);
+        assertEquals(__, Character.SIZE);
     }
 
     @Test
     public void decimalNumbersAreOfTypeDouble() {
-        assertEquals(getType(1.0), __);
+        assertEquals(__, getType(1.0));
     }
 
     @Test
     public void primitivesOfTypeDoubleCanBeDeclaredWithoutTheDecimalPoint() {
-        assertEquals(getType(1d), __);
+        assertEquals(__, getType(1d));
     }
 
     @Test
     public void primitivesOfTypeDoubleCanBeDeclaredWithExponents() {
-        assertEquals(getType(1e3), __);
-        assertEquals(1.0e3, __);
-        assertEquals(1E3, __);
+        assertEquals(__, getType(1e3));
+        assertEquals(__, 1.0e3);
+        assertEquals(__, 1E3);
     }
 
     @Test
     public void primitivesOfTypeDoubleHaveAnObjectTypeDouble() {
         Object number = 1.0;
-        assertEquals(getType(number), __);
+        assertEquals(__, getType(number));
     }
 
     @Test
     public void doublesHaveALargeRange() {
-        assertEquals(Double.MIN_VALUE, __);
-        assertEquals(Double.MAX_VALUE, __);
+        assertEquals(__, Double.MIN_VALUE);
+        assertEquals(__, Double.MAX_VALUE);
     }
 
     @Test
     public void doubleSize() {
-        assertEquals(Double.SIZE, __);
+        assertEquals(__, Double.SIZE);
     }
 
     @Test
     public void decimalNumbersCanAlsoBeOfTypeFloat() {
-        assertEquals(getType(1f), __);
+        assertEquals(__, getType(1f));
     }
 
     @Test
     public void primitivesOfTypeFloatCanBeDeclaredWithExponents() {
-        assertEquals(getType(1e3f), __);
-        assertEquals(1.0e3f, __);
-        assertEquals(1E3f, __);
+        assertEquals(__, getType(1e3f));
+        assertEquals(__, 1.0e3f);
+        assertEquals(__, 1E3f);
     }
 
     @Test
     public void primitivesOfTypeFloatHaveAnObjectTypeFloat() {
         Object number = 1f;
-        assertEquals(getType(number), __);
+        assertEquals(__, getType(number));
     }
 
     @Test
     public void floatsHaveASmallerRangeThanDoubles() {
-        assertEquals(Float.MIN_VALUE, __);
-        assertEquals(Float.MAX_VALUE, __);
+        assertEquals(__, Float.MIN_VALUE);
+        assertEquals(__, Float.MAX_VALUE);
     }
 
     @Test
     public void floatSize() {
-        assertEquals(Float.SIZE, __);
+        assertEquals(__, Float.SIZE);
     }
 
     private Class<?> getType(int value) {

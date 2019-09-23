@@ -14,16 +14,16 @@ public class _6_ArraysTest {
 
     @Test
     public void arraysAreMutable() {
-        final boolean[] oneBoolean = new boolean[]{false};
+        boolean[] oneBoolean = new boolean[]{false};
         oneBoolean[0] = true;
-        assertEquals(oneBoolean[0], __);
+        assertEquals(__, oneBoolean[0]);
     }
 
     @Test
     public void arraysAreIndexedAtZero() {
         int[] integers = new int[]{1, 2};
-        assertEquals(integers[0], __);
-        assertEquals(integers[1], __);
+        assertEquals(__, integers[0]);
+        assertEquals(__, integers[1]);
     }
 
     @Test
@@ -35,7 +35,7 @@ public class _6_ArraysTest {
 
     @Test
     public void arrayLengthCanBeChecked() {
-        assertEquals(new int[1].length, __);
+        assertEquals(__, new int[1].length);
     }
 
     @Test
@@ -43,28 +43,28 @@ public class _6_ArraysTest {
         // arrays utilize default object equality (A == {1} B == {1}, though A
         // and B contain the same thing, the container is not the same
         // referenced array instance...
-        assertEquals(new int[]{1}.equals(new int[]{1}), __);
+        assertEquals(__, new int[]{1}.equals(new int[]{1}));
     }
 
     @Test
     public void cloneEqualityIsNotRespected() { //!
         int[] original = new int[]{1};
-        assertEquals(original.equals(original.clone()), __);
+        assertEquals(__, original.equals(original.clone()));
     }
 
     @Test
     public void anArraysHashCodeMethodDoesNotConsiderElements() {
         int[] array0 = new int[]{0};
         int[] array1 = new int[]{0};
-        assertEquals(Integer.valueOf(array0.hashCode()).equals(array1.hashCode()), __); // not equal!
-        // TODO: ponder the consequences when arrays are used in Hash Collection implementations.
+        assertEquals(__, Integer.valueOf(array0.hashCode()).equals(array1.hashCode())); // not equal!
+        // ponder the consequences when arrays are used in Hash Collection implementations.
     }
 
     @Test
     public void arraysHelperClassEqualsMethodConsidersElementsWhenDeterminingEquality() {
         int[] array0 = new int[]{0};
         int[] array1 = new int[]{0};
-        assertEquals(Arrays.equals(array0, array1), __);    // whew - what most people assume
+        assertEquals(__, Arrays.equals(array0, array1));    // whew - what most people assume
         // about equals in regard to arrays! (logical equality)
     }
 
@@ -73,7 +73,7 @@ public class _6_ArraysTest {
         int[] array0 = new int[]{0};
         int[] array1 = new int[]{0};
         // whew - what most people assume about hashCode in regard to arrays!
-        assertEquals(Integer.valueOf(Arrays.hashCode(array0)).equals(Arrays.hashCode(array1)), __);
+        assertEquals(__, Integer.valueOf(Arrays.hashCode(array0)).equals(Arrays.hashCode(array1)));
     }
 
 }

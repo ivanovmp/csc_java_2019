@@ -16,7 +16,7 @@ public class _5_LoopsTest {
         for (int i = 0; i < 5; i++) {
             s += i + " ";
         }
-        assertEquals(s, __);
+        assertEquals(__, s);
     }
 
     @Test
@@ -25,7 +25,7 @@ public class _5_LoopsTest {
         for (int i = -5; i < 1; i++) {
             s += i + " ";
         }
-        assertEquals(s, __);
+        assertEquals(__, s);
     }
 
     @Test
@@ -34,7 +34,7 @@ public class _5_LoopsTest {
         for (int i = 5; i > 0; i--) {
             s += i + " ";
         }
-        assertEquals(s, __);
+        assertEquals(__, s);
     }
 
     @Test
@@ -43,7 +43,7 @@ public class _5_LoopsTest {
         for (int i = 0; i < 11; i += 2) {
             s += i + " ";
         }
-        assertEquals(s, __);
+        assertEquals(__, s);
     }
 
     @Test
@@ -52,7 +52,7 @@ public class _5_LoopsTest {
         for (int i = 1; i <= 16; i *= 2) {
             s += i + " ";
         }
-        assertEquals(s, __);
+        assertEquals(__, s);
     }
 
     @Test
@@ -61,7 +61,7 @@ public class _5_LoopsTest {
         for (int i = 0, j = 10; i < 5 && j > 5; i++, j--) {
             s += i + " " + j + " ";
         }
-        assertEquals(s, __);
+        assertEquals(__, s);
     }
 
     @Test
@@ -73,7 +73,7 @@ public class _5_LoopsTest {
             }
             s += " - ";
         }
-        assertEquals(s, __);
+        assertEquals(__, s);
     }
 
     @Test
@@ -83,7 +83,7 @@ public class _5_LoopsTest {
         for (int j : is) {
             s += j + " ";
         }
-        assertEquals(s, __);
+        assertEquals(__, s);
     }
 
     @Test
@@ -92,7 +92,7 @@ public class _5_LoopsTest {
         while (result < 3) {
             result++;
         }
-        assertEquals(result, __);
+        assertEquals(__, result);
     }
 
     @Test
@@ -101,7 +101,7 @@ public class _5_LoopsTest {
         do {
             result++;
         } while (false);
-        assertEquals(result, __);
+        assertEquals(__, result);
     }
 
     @Test
@@ -114,7 +114,7 @@ public class _5_LoopsTest {
             }
             count++;
         }
-        assertEquals(count, __);
+        assertEquals(__, count);
     }
 
     @Test
@@ -128,7 +128,7 @@ public class _5_LoopsTest {
                 count++;
             }
         }
-        assertEquals(count, __);
+        assertEquals(__, count);
     }
 
     @Test
@@ -146,7 +146,7 @@ public class _5_LoopsTest {
         }
         // What does continue with a label mean?
         // What gets executed? Where does the program flow continue?
-        assertEquals(count, __);
+        assertEquals(__, count);
     }
 
     @Test
@@ -164,6 +164,6 @@ public class _5_LoopsTest {
         }
         // What does break with a label mean?
         // What gets executed? Where does the program flow continue?
-        assertEquals(count, __);
+        assertEquals(__, count);
     }
 }

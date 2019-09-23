@@ -17,7 +17,7 @@ public class _7_AutoboxingTest {
     public void addPrimitivesToCollection() {
         List<Integer> list = new ArrayList<>();
         list.add(0, new Integer(42));
-        assertEquals(list.get(0), __);
+        assertEquals(__, list.get(0));
     }
 
     @Test
@@ -25,23 +25,38 @@ public class _7_AutoboxingTest {
         List<Integer> list = new ArrayList<>();
         list.add(0, 42);
         list.add(1, 84);
-        assertEquals(list.get(0), __);
-        assertEquals(list.get(1), __);
+        assertEquals(__, list.get(0));
+        assertEquals(__, list.get(1));
     }
 
     @Test
     public void allPrimitivesCanBeAutoboxed() {
         List<Double> doubleList = new ArrayList<>();
         doubleList.add(0, 42d);
-        assertEquals(doubleList.get(0), __);
+        assertEquals(__, doubleList.get(0));
 
         List<Long> longList = new ArrayList<>();
         longList.add(0, 42L);
-        assertEquals(longList.get(0), __);
+        assertEquals(__, longList.get(0));
 
         List<Character> characterList = new ArrayList<>();
         characterList.add(0, 'z');
-        assertEquals(characterList.get(0), __);
+        assertEquals(__, characterList.get(0));
+    }
+
+    @Test
+    public void surprise() {
+        Integer i = getInteger();
+        if (i > 0) {
+            i++;
+        } else {
+            i--;
+        }
+        assertEquals(__, i);
+    }
+
+    private Integer getInteger() {
+        return null;
     }
 
 }
