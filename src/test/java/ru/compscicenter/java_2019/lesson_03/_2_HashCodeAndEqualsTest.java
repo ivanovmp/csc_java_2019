@@ -14,22 +14,22 @@ public class _2_HashCodeAndEqualsTest {
     public void doubleEqualsTestsIfTwoObjectsAreTheSame() {
         Object object = new Object();
         Object sameObject = object;
-        assertEquals(object == sameObject, __);
-        assertEquals(object == new Object(), __);
+        assertEquals(__, object == sameObject);
+        assertEquals(__, object == new Object());
     }
 
     @Test
     public void equalsMethodByDefaultTestsIfTwoObjectsAreTheSame() {
         Object object = new Object();
-        assertEquals(object.equals(object), __);
-        assertEquals(object.equals(new Object()), __);
+        assertEquals(__, object.equals(object));
+        assertEquals(__, object.equals(new Object()));
     }
 
     @Test
     public void equalsMethodCanBeChangedBySubclassesToTestsIfTwoObjectsAreEqual() {
         Object object = 1;
-        assertEquals(object.equals(object), __);
-        assertEquals(object.equals(1), __);
+        assertEquals(__, object.equals(object));
+        assertEquals(__, object.equals(1));
         // Note: This means that for the class 'Object' there is no difference between 'equal' and 'same'
         // but for the class 'Integer' there is difference - see below
     }
@@ -38,36 +38,36 @@ public class _2_HashCodeAndEqualsTest {
     public void equalsMethodCanBeChangedBySubclassesToTestsIfTwoObjectsAreEqualExample() {
         Integer value1 = 4;
         Integer value2 = 2 + 2;
-        assertEquals(value1.equals(value2), __);
-        assertEquals(value1, __);
+        assertEquals(__, value1.equals(value2));
+        assertEquals(__, value1);
     }
 
     @Test
     public void objectsNeverEqualNull() {
-        assertEquals(new Object().equals(null), __);
+        assertEquals(__, new Object().equals(null));
     }
 
     @Test
     public void objectsEqualThemselves() {
         Object obj = new Object();
-        assertEquals(obj.equals(obj), __);
+        assertEquals(__, obj.equals(obj));
     }
 
     @Test
     public void equalityOfObjectsOfDifferentClasses() {
         Integer i = 1;
         Long l = 1L;
-        assertEquals(i.intValue() == l.longValue(), __);
-        assertEquals(i.equals(l), __);
+        assertEquals(__, i.intValue() == l.longValue());
+        assertEquals(__, i.equals(l));
     }
 
     @Test
     public void mainContractBetweenHashcodeAndEquals() {
         Integer i1 = 42;
         Integer i2 = 42;
-        assertEquals(i1 == i2, __);
-        assertEquals(i1.equals(i2), __);
-        assertEquals(i1.hashCode() == i2.hashCode(), __);
+        assertEquals(__, i1 == i2);
+        assertEquals(__, i1.equals(i2));
+        assertEquals(__, i1.hashCode() == i2.hashCode());
     }
 
 }

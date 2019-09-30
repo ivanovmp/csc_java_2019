@@ -4,6 +4,8 @@ import org.junit.FixMethodOrder;
 import org.junit.Test;
 import org.junit.runners.MethodSorters;
 
+import java.util.Arrays;
+
 import static org.junit.Assert.*;
 import static ru.compscicenter.java_2019.Util.__;
 
@@ -22,19 +24,20 @@ public class _3_CloneTest {
         Object clone = f.clone();
 
         assertNotSame(f, clone);
-        assertSame(f.getClass(), __);
-        assertEquals(f, __);
+        assertSame(__, f.getClass());
+        assertEquals(__, f.equals(clone));
     }
 
     @Test
     public void cloneComplexObjectsAsShallowCopy() throws CloneNotSupportedException {
         CloneableFoo cloneableFoo = new CloneableFoo(42);
-        ComposedCloneableFoo composedCloneableFoo = new ComposedCloneableFoo(cloneableFoo);
-        ComposedCloneableFoo clone = composedCloneableFoo.clone();
+        ComposedCloneableFoo composed = new ComposedCloneableFoo(cloneableFoo);
+        ComposedCloneableFoo composedClone = composed.clone();
 
-        assertNotSame(composedCloneableFoo, clone);
-        assertEquals(composedCloneableFoo.getFoo(), __);
-        assertSame(composedCloneableFoo.getFoo(), __);
+        assertEquals(__, composed == composedClone);
+        assertEquals(__, composed.getFoo().equals(composedClone.getFoo()));
+        assertEquals(__, composed.getFoo().hashCode() == composedClone.getFoo().hashCode());
+        assertEquals(__, composed.getFoo() == composedClone.getFoo());
 
     }
 
@@ -42,7 +45,11 @@ public class _3_CloneTest {
     public void cloneArray() {
         int[] ints = {1, 2, 3, 4};
         int[] clone = ints.clone();
-        assertEquals(clone[2], __);
+        assertEquals(__, clone.getClass());
+        assertEquals(__, clone == ints);
+        assertEquals(__, clone.equals(ints));
+        assertEquals(__, Arrays.equals(clone, ints));
+        assertEquals(__, clone[2]);
     }
 
 }

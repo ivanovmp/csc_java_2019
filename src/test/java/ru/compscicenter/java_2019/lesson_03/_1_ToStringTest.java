@@ -17,14 +17,14 @@ public class _1_ToStringTest {
         Object object = new Object();
         // TODO: Why is it best practice to ALWAYS override toString?
         String expectedToString = MessageFormat.format("{0}@{1}", Object.class.getName(), Integer.toHexString(object.hashCode()));
-        assertEquals(expectedToString, __); // hint: object.toString()
+        assertEquals(__, expectedToString); // hint: object.toString()
     }
 
     @Test
     public void implicitToStringInvocation() {
         Integer integer = 42;
         String expectedToString = MessageFormat.format("{0}", integer);
-        assertEquals(expectedToString, __);
+        assertEquals(__, expectedToString);
     }
 
 }

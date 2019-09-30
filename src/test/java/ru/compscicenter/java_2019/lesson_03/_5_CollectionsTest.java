@@ -20,24 +20,26 @@ public class _5_CollectionsTest {
         list.add("Chicken");
         list.add("Dog");
         list.add("Chicken");
-        assertEquals(list.get(0), __);
-        assertEquals(list.get(1), __);
-        assertEquals(list.get(2), __);
+        assertEquals(__, list.get(0));
+        assertEquals(__, list.get(1));
+        assertEquals(__, list.get(2));
 
-        assertEquals(list.size(), __);
+        assertEquals(__, list.size());
         list.remove("Chicken");
         list.remove("Chicken");
-        assertEquals(list.contains("Chicken"), __);
-        assertEquals(list.contains("Cat"), __);
+        assertEquals(__, list.contains("Chicken"));
+        assertEquals(__, list.contains("Cat"));
 
         int i = 0;
         Iterator<String> iterator = list.iterator();
         while (iterator.hasNext()) {
-            String next = iterator.next();
+            iterator.next();
             i++;
         }
         assertEquals(i, __);
 
+        list.add(1, "Cat");
+        assertEquals(__, list.get(2));
     }
 
     @Test
@@ -48,14 +50,15 @@ public class _5_CollectionsTest {
         list.add("Chicken");
         list.add("Dog");
         list.add("Chicken");
-        assertEquals(list.get(0), __);
-        assertEquals(list.get(1), __);
-        assertEquals(list.get(2), __);
+
+        assertEquals(__, list.get(0));
+        assertEquals(__, list.get(1));
+        assertEquals(__, list.get(2));
         int i = 0;
         for (String s : list) {
             i++;
         }
-        assertEquals(i, __);
+        assertEquals(__, i);
     }
 
     @Test
@@ -65,37 +68,49 @@ public class _5_CollectionsTest {
         // PriorityQueue: simple queue implementation
         queue.add("Cat");
         queue.add("Dog");
-        assertEquals(queue.peek(), __);
-        assertEquals(queue.size(), __);
-        assertEquals(queue.poll(), __);
-        assertEquals(queue.size(), __);
-        assertEquals(queue.poll(), __);
-        assertEquals(queue.isEmpty(), __);
+        assertEquals(__, queue.peek());
+        assertEquals(__, queue.size());
+        assertEquals(__, queue.poll());
+        assertEquals(__, queue.size());
+        assertEquals(__, queue.poll());
+        assertEquals(__, queue.isEmpty());
     }
 
     @Test
-    public void usingABasicSet() {
+    public void usingAHashSet() {
         Set<String> set = new HashSet<>();
         set.add("Dog");
         set.add("Cat");
         set.add("Dog");
-        assertEquals(set.size(), __);
-        assertEquals(set.contains("Dog"), __);
-        assertEquals(set.contains("Cat"), __);
-        assertEquals(set.contains("Chicken"), __);
+        assertEquals(__, set.size());
+        assertEquals(__, set.contains("Dog"));
+        assertEquals(__, set.contains("Cat"));
+        assertEquals(__, set.contains("Chicken"));
+
+        set.remove("Dog");
+        set.remove("DOG");
+        assertEquals(__, set.size());
     }
 
     @Test
-    public void usingABasicMap() {
+    public void usingAHashMap() {
         Map<String, String> map = new HashMap<>();
         map.put("first key", "first value");
         map.put("second key", "second value");
         map.put("first key", "other value");
-        assertEquals(map.size(), __);
-        assertEquals(map.containsKey("first key"), __);
-        assertEquals(map.containsKey("second key"), __);
-        assertEquals(map.containsValue("first value"), __);
-        assertEquals(map.get("first key"), __);
+        assertEquals(__, map.size());
+        assertEquals(__, map.containsKey("first key"));
+        assertEquals(__, map.containsKey("second key"));
+        assertEquals(__, map.containsValue("first value"));
+        assertEquals(__, map.get("first key"));
+        Set<Map.Entry<String, String>> entries = map.entrySet();
+        int i = 0;
+        for (Map.Entry<String, String> entry : entries) {
+            i++;
+        }
+        assertEquals(__, i);
+        map.remove("second key");
+        assertEquals(__, map.size());
     }
 
     @Test
@@ -103,15 +118,15 @@ public class _5_CollectionsTest {
         String[] array = {"a", "b", "c"};
         List<String> list = Arrays.asList(array);
         list.set(0, "x");
-        assertEquals(array[0], __);
+        assertEquals(__, array[0]);
         array[0] = "a";
-        assertEquals(list.get(0), __);
+        assertEquals(__, list.get(0));
         // Just think of it as quantum state teleportation...
     }
 
     @Test
     public void usingBackedSubMap() {
-        Map<String, String> map = new TreeMap<>();
+        SortedMap<String, String> map = new TreeMap<>();
         map.put("a", "Aha");
         map.put("b", "Boo");
         map.put("c", "Coon");
@@ -119,16 +134,22 @@ public class _5_CollectionsTest {
         map.put("f", "Fox");
         map.put("d", "Dog");
 
-        assertEquals(map.size(), __);
-        assertEquals(map.containsKey("d"), __);
-        assertEquals(map.containsValue("Foo"), __);
+        assertEquals(__, map.size());
+        assertEquals(__, map.containsKey("d"));
+        assertEquals(__, map.containsValue("Foo"));
         // Again: backed maps are just like those little quantum states
         // that are connected forever...
+
+        SortedMap<String, String> subMap = map.subMap("b", "d");
+
         StringBuilder sb = new StringBuilder();
-        for (Map.Entry<String, String> entry : map.entrySet()) {
+        for (Map.Entry<String, String> entry : subMap.entrySet()) {
             sb.append(entry);
         }
-        assertEquals(sb.toString(), __);
+        assertEquals(__, sb.toString());
+
+        subMap.put("bb", "Bee");
+        assertEquals(__, map.size());
     }
 
     @Test
@@ -137,13 +158,13 @@ public class _5_CollectionsTest {
         sorted.add("c");
         sorted.add("z");
         sorted.add("a");
-        assertEquals(sorted.first(), __);
-        assertEquals(sorted.last(), __);
+        assertEquals(__, sorted.first());
+        assertEquals(__, sorted.last());
         // Look at the different constructors for a TreeSet (or TreeMap)
         // Ponder how you might influence the sort order. Hold that thought
         // until you approach AboutComparison
 
-        LinkedHashSet<String> ordered = new LinkedHashSet<>();
+        Set<String> ordered = new LinkedHashSet<>();
         ordered.add("c");
         ordered.add("z");
         ordered.add("a");
