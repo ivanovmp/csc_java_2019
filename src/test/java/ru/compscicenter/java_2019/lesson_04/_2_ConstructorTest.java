@@ -20,6 +20,7 @@ public class _2_ConstructorTest {
     }
 
     class B extends A {
+
         public B() {
             someString += "g";
         }
@@ -28,7 +29,7 @@ public class _2_ConstructorTest {
 
     @Test
     public void simpleConstructorOrder() {
-        assertEquals(new B().someString, __);
+        assertEquals(__, new B().someString);
     }
 
     class Aa {
@@ -53,7 +54,7 @@ public class _2_ConstructorTest {
 
     @Test
     public void complexConstructorOrder() {
-        assertEquals(new Bb().someString, __);
+        assertEquals(__, new Bb().someString);
     }
 
 }

@@ -4,8 +4,8 @@ abstract class Animal {
 
     private long birthInMillis;
 
-    protected Animal(long date) {
-        this.birthInMillis = date;
+    protected Animal(long birthInMillis) {
+        this.birthInMillis = birthInMillis;
     }
 
     abstract String getName();

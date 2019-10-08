@@ -17,7 +17,7 @@ public class _1_OOPDefinitionTest {
     public void objectClass() {
         Object o = new Object();
         assertEquals(Object.class, o.getClass());
-        assertEquals(o.getClass().getName(), __);
+        assertEquals(__, o.getClass().getName());
     }
 
     @Test
@@ -25,19 +25,24 @@ public class _1_OOPDefinitionTest {
         AccessDemo demo = new AccessDemo(1, 2, 3, 4);
 
         demo.publicField = 5;
-        assertEquals(demo.getPublicField(), __);
-        //test is in the same package
+
+        assertEquals(__, demo.getPublicField());
+
         demo.packageField = 6;
-        assertEquals(demo.getPackageField(), __);
+
+        assertEquals(__, demo.getPackageField());
+
         demo.protectedField = 7;
-        assertEquals(demo.getProtectedField(), __);
+
+        assertEquals(__, demo.getProtectedField());
 
         AccessDemoDescendant anotherDemo = new AccessDemoDescendant(5, 6, 7, 8);
 
-        assertEquals(anotherDemo.testAccessToProtectedField(), __);
+        assertEquals(__, anotherDemo.testAccessToProtectedField());
 
-        demo.changePrivateFieldAsIHave(anotherDemo);
-        assertEquals(anotherDemo.getPrivateField(), __);
+        demo.changePrivateFieldToWhatIHave(anotherDemo);
+
+        assertEquals(__, anotherDemo.getPrivateField());
     }
 
     @Test
@@ -49,24 +54,27 @@ public class _1_OOPDefinitionTest {
         List<Vehicle> vehicles = List.of(v, b, t);
 
         StringBuilder sb = new StringBuilder();
+
         for (Vehicle vehicle : vehicles) {
             sb.append(vehicle.makeSound());
         }
-        assertEquals(sb.toString(), __);
 
-        assertEquals(b.makeSound(), __);
-        assertEquals(b.makeSound(3), __);
+        assertEquals(__, sb.toString());
+
+        assertEquals(__, b.makeSound());
+
+        assertEquals(__, b.makeSound(3));
 
     }
 
     @Test
     public void aggregationCompositionLifecycle() {
         Car car = new Car(new Wheel());
-        assertEquals(car.wheel != null, __);
+        assertEquals(__, car.getWheel() != null);
 
         Wheel wheel = new Wheel();
         Car anotherCar = new Car(wheel);
-        assertEquals(anotherCar.wheel == wheel, __);
+        assertEquals(__, anotherCar.getWheel() == wheel);
     }
 
     @Test
@@ -75,16 +83,16 @@ public class _1_OOPDefinitionTest {
         Bird bird = new Bird(654321L);
         Pegasus pegasus = new Pegasus(42L);
 
-        assertEquals(pegasus instanceof Animal, __);
-        assertEquals(pegasus instanceof Flying, __);
-        assertEquals(pegasus instanceof Galloping, __);
-        assertEquals(pegasus instanceof Object, __);
+        assertEquals(__, pegasus instanceof Animal);
+        assertEquals(__, pegasus instanceof Flying);
+        assertEquals(__, pegasus instanceof Galloping);
+        assertEquals(__, pegasus instanceof Object);
 
         Animal a = pegasus;
-        assertEquals(a instanceof Bird, __);
+        assertEquals(__, a instanceof Bird);
 
         Object o = pegasus;
-        assertEquals(o instanceof Number, __);
+        assertEquals(__, o instanceof Number);
 
         List<Flying> flyings = List.of(bird, pegasus);
 
@@ -92,7 +100,7 @@ public class _1_OOPDefinitionTest {
         for (Flying f : flyings) {
             sb.append(f.fly());
         }
-        assertEquals(sb.toString(), __);
+        assertEquals(__, sb.toString());
 
         List<Galloping> gallopings = List.of(horse, pegasus);
 
@@ -100,7 +108,7 @@ public class _1_OOPDefinitionTest {
         for (Galloping g : gallopings) {
             sb.append(g.gallop());
         }
-        assertEquals(sb.toString(), __);
+        assertEquals(__, sb.toString());
     }
 
 }

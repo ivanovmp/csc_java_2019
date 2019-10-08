@@ -55,8 +55,8 @@ public class _7_SolidTest {
         List<String> list = new ArrayList<>();
         CollectionWrapperAndAnotherCollectionFiller<String> badSmellWrapper = new CollectionWrapperAndAnotherCollectionFiller<>(list);
         badSmellWrapper.add("ho");
-        assertEquals(list.size(), __);
-        assertEquals(badSmellWrapper.size(), __);
+        assertEquals(__, list.size());
+        assertEquals(__, badSmellWrapper.size());
 
         class BetterCollectionWrapper<E> {
 
@@ -87,8 +87,8 @@ public class _7_SolidTest {
         wrapper.addObserver(anotherList::add);
         wrapper.addObserver(System.out::println);
         wrapper.add("hey!");
-        assertEquals(wrapper.size(), __);
-        assertEquals(anotherList.size(), __);
+        assertEquals(__, wrapper.size());
+        assertEquals(__, anotherList.size());
     }
 
     @Test

@@ -21,45 +21,50 @@ public class _3_InnerClassTest {
     }
 
     class Inner {
+
         public String doStuff() {
             return "stuff";
         }
 
-        public int returnOuter() {
+        private int returnOuter() {
             return x; //can access private fields of outer class!
         }
+
     }
 
     @Test
     public void creatingInnerClassInstance() {
-        Inner someObject = new Inner();
-        assertEquals(someObject.doStuff(), __);
+        Inner inner = new Inner();
+        assertEquals(__, inner.doStuff());
     }
 
     @Test
     public void creatingInnerClassInstanceWithOtherSyntax() {
-        _3_InnerClassTest.Inner someObject = this.new Inner();
-        assertEquals(someObject.doStuff(), __);
+        _3_InnerClassTest.Inner inner = this.new Inner();
+        assertEquals(__, inner.doStuff());
     }
 
     @Test
-    public void accessingOuterClassMembers() {
-        Inner someObject = new Inner();
-        assertEquals(someObject.returnOuter(), __);
+    public void accessingInnerClassMembers() {
+        Inner inner = new Inner();
+        assertEquals(__, inner.returnOuter());
     }
 
     @Test
     public void innerClassesInMethods() {
         class MethodInnerClass {
-            int oneHundred() {
-                return 100;
+
+            int fortyTwo() {
+                return x;
             }
+
         }
-        assertEquals(new MethodInnerClass().oneHundred(), __);
+        assertEquals(__, new MethodInnerClass().fortyTwo());
         // Where can you use this class?
     }
 
     class AnotherInnerClass {
+
         int thousand() {
             return 1000;
         }
@@ -77,9 +82,9 @@ public class _3_InnerClassTest {
     @Test
     public void innerClassesInMethodsThatEscape() {
         AnotherInnerClass ic = new AnotherInnerClass();
-        assertEquals(ic.thousand(), __);
-        AnotherInnerClass theCrazyIC = ic.crazyReturn();
-        assertEquals(theCrazyIC.thousand(), __);
+        assertEquals(__, ic.thousand());
+        AnotherInnerClass crazy = ic.crazyReturn();
+        assertEquals(__, crazy.thousand());
     }
 
 
@@ -90,7 +95,7 @@ public class _3_InnerClassTest {
                 return 23;
             }
         };// <- Why do you need a semicolon here?
-        assertEquals(anonymous.theAnswer(), __);
+        assertEquals(__, anonymous.theAnswer());
     }
 
     @Test
@@ -99,8 +104,10 @@ public class _3_InnerClassTest {
             public String ignoreAll() {
                 return null;
             }
-        }; // Complete the code so that the statement below is correct.
+        };
+        // Complete the code so that the statement below is correct.
         // Look at the test above for inspiration
+        // TODO here!
         assertEquals(ignoreable.ignoreAll(), "SomeInterestingString");
         // Did you just created an object of an interface type?
         // Or did you create a class that implemented this interface and
@@ -109,45 +116,45 @@ public class _3_InnerClassTest {
 
     @Test
     public void innerClassAndInheritance() {
-        Inner someObject = new Inner();
+        Inner inner = new Inner();
         // The statement below is obvious...
-        // Try to change the 'Inner' below to "AboutInnerClasses'
+        // Try to change the 'Inner' below to "AnotherInnerClass'
         // Why do you get an error?
         // What does that imply for inner classes and inheritance?
-        assertEquals(someObject instanceof Inner, __);
+        assertEquals(__, inner instanceof Inner);
     }
 
-    class OtherInner extends _3_InnerClassTest {
+    class AnotherInner extends _3_InnerClassTest {
     }
 
     @Test
     public void innerClassAndInheritanceOther() {
-        OtherInner someObject = new OtherInner();
+        AnotherInner anotherInner = new AnotherInner();
         // What do you expect here?
         // Compare this result with the last test. What does that mean?
-        assertEquals(someObject instanceof _3_InnerClassTest, __);
+        assertEquals(__, anotherInner instanceof _3_InnerClassTest);
     }
 
     static class StaticInnerClass {
+
         public int importantNumber() {
-            return 3; //can't access private fields of outer class!
+            return 42; //can't access private fields of outer class!
         }
+
     }
 
     @Test
     public void staticInnerClass() {
         StaticInnerClass someObject = new StaticInnerClass();
-        assertEquals(someObject.importantNumber(), __);
+        assertEquals(__, someObject.importantNumber());
         // What happens if you try to access 'x' or 'theAnswer' from the outer class?
         // What does this mean for static inner classes?
-        // Try to create a sub package of this package which is named 'StaticInnerClass'
-        // Does it work? Why not?
     }
 
     @Test
     public void staticInnerClassFullyQualified() {
         _3_InnerClassTest.StaticInnerClass someObject = new _3_InnerClassTest.StaticInnerClass();
-        assertEquals(someObject.importantNumber(), __);
+        assertEquals(__, someObject.importantNumber());
     }
 
 }

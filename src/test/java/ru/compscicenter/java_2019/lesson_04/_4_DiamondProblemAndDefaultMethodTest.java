@@ -34,7 +34,7 @@ public class _4_DiamondProblemAndDefaultMethodTest {
     @Test
     public void multipleInheritance() {
         Minotaur minotaur = new Minotaur();
-        assertEquals(minotaur.sound(), __);
+        assertEquals(__, minotaur.sound());
     }
 
 }

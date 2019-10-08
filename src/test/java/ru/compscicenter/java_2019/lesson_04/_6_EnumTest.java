@@ -22,18 +22,19 @@ public class _6_EnumTest {
     @Test
     public void basicEnums() {
         Colors blue = Colors.Blue; //it's a constant, always the same instance returned
-        assertEquals(blue == Colors.Blue, __);
-        assertEquals(blue == Colors.Red, __);
-        assertEquals(blue instanceof Colors, __);
+        assertEquals(__, blue == Colors.Blue);
+        assertEquals(__, blue == Colors.Red);
+        assertEquals(__, blue instanceof Colors);
+        assertEquals(__, blue instanceof Enum);
     }
 
     @Test
     public void basicEnumsAccess() {
         Colors[] colorArray = Colors.values();
-        assertEquals(colorArray[2], __);
-        assertEquals(colorArray[1].name(), __);
-        assertEquals(Colors.valueOf("Green"), __);
-        assertEquals(Colors.valueOf("Black"), __);
+        assertEquals(__, colorArray[2]);
+        assertEquals(__, colorArray[1].name());
+        assertEquals(__, Colors.valueOf("Green"));
+        assertEquals(__, Colors.valueOf("Black"));
     }
 
     enum SkatSuits {
@@ -55,7 +56,7 @@ public class _6_EnumTest {
         // value is private but we still can access it. Why?
         // Try moving the enum outside the AboutEnum class... What do you expect?
         // What happens?
-        assertEquals(SkatSuits.Clubs.value > SkatSuits.Spades.value, __);
+        assertEquals(__, SkatSuits.Clubs.value > SkatSuits.Spades.value);
     }
 
     enum OpticalMedia {
@@ -63,8 +64,8 @@ public class _6_EnumTest {
         DVD(4300),
         BluRay(50000);
 
-        OpticalMedia(int c) {
-            capacityInMegaBytes = c;
+        OpticalMedia(int capacity) {
+            capacityInMegaBytes = capacity;
         }
 
         int capacityInMegaBytes;
@@ -76,14 +77,14 @@ public class _6_EnumTest {
 
     @Test
     public void enumsWithMethods() {
-        assertEquals(OpticalMedia.CD.getCoolnessFactor(), __);
-        assertEquals(OpticalMedia.BluRay.getCoolnessFactor(), __);
+        assertEquals(__, OpticalMedia.CD.getCoolnessFactor());
+        assertEquals(__, OpticalMedia.BluRay.getCoolnessFactor());
     }
 
     @Test
     public void ordinals() {
-        assertEquals(OpticalMedia.CD.ordinal(), __);
-        assertEquals(OpticalMedia.DVD.ordinal(), __);
-        assertEquals(OpticalMedia.BluRay.ordinal(), __);
+        assertEquals(__, OpticalMedia.CD.ordinal());
+        assertEquals(__, OpticalMedia.DVD.ordinal());
+        assertEquals(__, OpticalMedia.BluRay.ordinal());
     }
 }

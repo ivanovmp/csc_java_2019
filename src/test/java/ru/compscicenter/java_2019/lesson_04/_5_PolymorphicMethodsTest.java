@@ -33,30 +33,36 @@ public class _5_PolymorphicMethodsTest {
 
     @Test
     public void methodPreferenceInt() {
-        assertEquals(new A().doStuff(1), __);
+        assertEquals(__, new A().doStuff(1));
     }
 
     @Test
     public void methodPreferenceInteger() {
-        assertEquals(new A().doStuff(Integer.valueOf(1)), __);
+        assertEquals(__, new A().doStuff(Integer.valueOf(1)));
     }
 
     @Test
     public void methodPreferenceLong() {
         long l = 1;
-        assertEquals(new A().doStuff(l), __);
+        assertEquals(__, new A().doStuff(l));
+    }
+
+    @Test
+    public void methodPreferenceByte() {
+        byte b = 1;
+        assertEquals(__, new A().doStuff(b));
     }
 
     @Test
     public void methodPreferenceBoxedLong() {
         Long l = Long.valueOf(1);
-        assertEquals(new A().doStuff(l), __);
+        assertEquals(__, new A().doStuff(l));
     }
 
     @Test
     public void methodPreferenceDouble() {
         Double l = Double.valueOf(1);
-        assertEquals(new A().doStuff(l), __);
+        assertEquals(__, new A().doStuff(l));
     }
 
     @Test
@@ -64,7 +70,7 @@ public class _5_PolymorphicMethodsTest {
         // What happens if you change 'Integer' to 'Double'
         // Does this explain 'methodPreferenceDouble'?
         // Think about why this happens?
-        assertEquals(new A().doStuff(1, Integer.valueOf(2)), __);
+        assertEquals(__, new A().doStuff(1, Integer.valueOf(2)));
     }
 
 }

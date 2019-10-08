@@ -3,7 +3,7 @@ package ru.compscicenter.java_2019.lesson_04;
 public class Vehicle {
 
     public String makeSound() {
-        return "bzz!";
+        return "bzzzzzz!";
     }
 
     public String makeSound(int times) {

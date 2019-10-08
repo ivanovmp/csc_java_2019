@@ -47,7 +47,7 @@ public class AccessDemo {
         this.protectedField = protectedField;
     }
 
-    public void changePrivateFieldAsIHave(AccessDemo anotherDemo) {
+    public void changePrivateFieldToWhatIHave(AccessDemo anotherDemo) {
         anotherDemo.privateField = this.privateField;
     }
 }
