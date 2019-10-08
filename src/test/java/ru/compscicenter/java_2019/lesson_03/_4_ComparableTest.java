@@ -17,16 +17,16 @@ public class _4_ComparableTest {
     public void compareObjects() {
         String a = "abc";
         String b = "bcd";
-        assertEquals(__, a.compareTo(b));
-        assertEquals(__, a.compareTo(a));
-        assertEquals(__, b.compareTo(a));
+        assertEquals(-1, a.compareTo(b));
+        assertEquals(0, a.compareTo(a));
+        assertEquals(1, b.compareTo(a));
     }
 
     @Test
     public void makeObjectsComparable() {
         Car vwBeetle = new Car(50);
         Car porsche = new Car(500);
-        assertEquals(__, vwBeetle.compareTo(porsche));
+        assertEquals(-1, (int) Math.signum(vwBeetle.compareTo(porsche)));
     }
 
     @Test
@@ -45,7 +45,7 @@ public class _4_ComparableTest {
         RaceHorse[] horses = {lindy, slowy, lightning};
 
         Arrays.sort(horses, new HorseAgeComparator());
-        assertEquals(__, horses[0]);
+        assertEquals(lightning, horses[0]);
 
         Arrays.sort(horses, new Comparator<RaceHorse>() {
             @Override
@@ -53,13 +53,13 @@ public class _4_ComparableTest {
                 return o1.age - o2.age;
             }
         });
-        assertEquals(__, horses[0]);
+        assertEquals(lightning, horses[0]);
 
         Arrays.sort(horses, (o1, o2) -> o1.speed/o1.age - o2.speed/o2.age);
-        assertEquals(__, horses[0]);
+        assertEquals(lindy, horses[0]);
 
         Arrays.sort(horses, Comparator.comparingInt(o -> o.speed / o.age));
-        assertEquals(__, horses[0]);
+        assertEquals(lindy, horses[0]);
 
     }
 

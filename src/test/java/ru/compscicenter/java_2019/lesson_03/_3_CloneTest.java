@@ -24,8 +24,8 @@ public class _3_CloneTest {
         Object clone = f.clone();
 
         assertNotSame(f, clone);
-        assertSame(__, f.getClass());
-        assertEquals(__, f.equals(clone));
+        assertSame(clone.getClass(), f.getClass());
+        assertEquals(true, f.equals(clone));
     }
 
     @Test
@@ -34,10 +34,10 @@ public class _3_CloneTest {
         ComposedCloneableFoo composed = new ComposedCloneableFoo(cloneableFoo);
         ComposedCloneableFoo composedClone = composed.clone();
 
-        assertEquals(__, composed == composedClone);
-        assertEquals(__, composed.getFoo().equals(composedClone.getFoo()));
-        assertEquals(__, composed.getFoo().hashCode() == composedClone.getFoo().hashCode());
-        assertEquals(__, composed.getFoo() == composedClone.getFoo());
+        assertEquals(false, composed == composedClone);
+        assertEquals(true, composed.getFoo().equals(composedClone.getFoo()));
+        assertEquals(true, composed.getFoo().hashCode() == composedClone.getFoo().hashCode());
+        assertEquals(true, composed.getFoo() == composedClone.getFoo());
 
     }
 
@@ -45,11 +45,11 @@ public class _3_CloneTest {
     public void cloneArray() {
         int[] ints = {1, 2, 3, 4};
         int[] clone = ints.clone();
-        assertEquals(__, clone.getClass());
-        assertEquals(__, clone == ints);
-        assertEquals(__, clone.equals(ints));
-        assertEquals(__, Arrays.equals(clone, ints));
-        assertEquals(__, clone[2]);
+        assertEquals(ints.getClass(), clone.getClass());
+        assertEquals(false, clone == ints);
+        assertEquals(false, clone.equals(ints));
+        assertEquals(true, Arrays.equals(clone, ints));
+        assertEquals(3, clone[2]);
     }
 
 }

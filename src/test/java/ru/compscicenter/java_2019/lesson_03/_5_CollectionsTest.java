@@ -20,15 +20,15 @@ public class _5_CollectionsTest {
         list.add("Chicken");
         list.add("Dog");
         list.add("Chicken");
-        assertEquals(__, list.get(0));
-        assertEquals(__, list.get(1));
-        assertEquals(__, list.get(2));
+        assertEquals("Chicken", list.get(0));
+        assertEquals("Dog", list.get(1));
+        assertEquals("Chicken", list.get(2));
 
-        assertEquals(__, list.size());
+        assertEquals(3, list.size());
         list.remove("Chicken");
         list.remove("Chicken");
-        assertEquals(__, list.contains("Chicken"));
-        assertEquals(__, list.contains("Cat"));
+        assertEquals(false, list.contains("Chicken"));
+        assertEquals(false, list.contains("Cat"));
 
         int i = 0;
         Iterator<String> iterator = list.iterator();
@@ -36,10 +36,11 @@ public class _5_CollectionsTest {
             iterator.next();
             i++;
         }
-        assertEquals(i, __);
+        assertEquals(i, 1);
 
         list.add(1, "Cat");
-        assertEquals(__, list.get(2));
+        list.add(2, "Cateferiy");
+        assertEquals("Cateferiy", list.get(2));
     }
 
     @Test
